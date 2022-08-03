@@ -1,0 +1,338 @@
+/* The Base */
+@font-face {
+    font-family: pixel;
+    src: url(/src/fonts/VT323/VT323-Regular.ttf);
+}
+
+/* Default */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: pixel;
+    font-weight: 200;
+    font-size: 1.25rem;
+    color: white;
+    overflow-x: hidden;
+}
+
+li,
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+/* =================================================================
+    background-color: #24252A;
+    Navbar 
+   ================================================================= */
+
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.2);
+    align-items: center;
+    width: 100%;
+    position: fixed !important;
+    top: 0;
+    z-index: 2;
+}
+
+.nav-default {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: background 0.4s ease-in;
+}
+
+.nav-scrolled {
+    background-color: #24252A;
+    transition: background 0.3s ease-in;
+}
+
+.name {
+    font-size: 1.6rem;
+    padding: 1rem;
+    margin-right: auto;
+    color: #ffffff;
+    background-color: #04AA6D;
+    border-bottom-right-radius: 1.75rem;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 1rem;
+}
+
+.name,
+.nav-links li a {
+    transition: all 0.3s ease-in-out 0s;
+
+}
+
+.name:hover {
+    background-color: #C79D59;
+}
+
+.nav-links li a:hover {
+    color: #AFE1AF;
+}
+
+.run-gif {
+    margin-left: 8rem;
+    margin-right: 30rem;
+    width: 2.5rem;
+    position: absolute;
+
+    animation: linear infinite;
+    animation-name: run;
+    animation-duration: 10s;
+}
+
+@media screen and (min-width: 768px) {
+    @keyframes run {
+        0% {
+            left: 2rem;
+        }
+
+        48% {
+            -webkit-transform: rotateY(0deg);
+        }
+
+        50% {
+            left: calc(80% - 6.25rem);
+            -webkit-transform: rotateY(180deg);
+        }
+
+        98% {
+            -webkit-transform: rotateY(180deg);
+        }
+
+        100% {
+            left: 0;
+            -webkit-transform: rotateY(0deg);
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    @-webkit-keyframes run {
+        0% {
+            left: 2rem;
+        }
+
+        48% {
+            -webkit-transform: rotateY(0deg);
+        }
+
+        50% {
+            -webkit-transform: rotateY(180deg);
+        }
+
+        98% {
+            -webkit-transform: rotateY(180deg);
+        }
+
+        100% {
+            left: 0;
+            -webkit-transform: rotateY(0deg);
+        }
+    }
+}
+
+
+/* =================================================================
+    Menu (Navbar Extended)
+   ================================================================= */
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    margin-right: 1rem;
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+    background-color: white;
+}
+
+@media(max-width:768px) {
+    .menu {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 3.7rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        gap: 0;
+        flex-direction: column;
+        border-bottom-right-radius: 2rem;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-items {
+        margin: 16px 0;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links-default {
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: background 0.4s ease-in;
+        transition: 0.3s;
+
+    }
+
+    .nav-links-scrolled {
+        background-color: #24252A;
+        transition: background 0.3s ease-in;
+        transition: 0.3s;
+
+    }
+}
+
+/* ==============================
+    Scrollbar
+  ============================== */
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #485740;
+    box-shadow: inset 0 0 5px #485740;
+    border-radius: 0;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #36303B;
+    border-radius: 5rem;
+}
+
+
+
+/* ==============================
+    Home Section
+  ============================== */
+
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    background-image: url(imgs/home_page_bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.home-page::before {
+    position: absolute;
+    content: "";
+    height: 10%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(transparent 0%, #3B3945 100%);
+}
+
+h1 {
+    text-align: center;
+    color: #E1C16E;
+    text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
+    font-size: 12vh;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.about-me {
+    margin-top: -2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: row
+}
+
+.about-me p {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+
+/* ==============================
+    Work  Section
+  ============================== */
+
+
+#work{
+    background-color: #3B3945;
+}
+
+
+h2 {
+    margin-top: 5rem;
+    text-align: center;
+    color: white;
+    font-size: 7vh;
+}
+
+
+.apps{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap; 
+    height: 920px;
+    background-color: #3B3945;
+    margin-top: 5rem;
+}
+
+.somebullshit{
+    
+}
+
+.calender{
+    width: 20rem;
+    height: 10rem;
+    background-color: rgb(160, 160, 160);
+    border-radius: 0.5rem;
+    
+}
+
+
+
+
+
+.terminal{
+    width: 20rem;
+    height: 10rem;
+    background-color:rgb(160, 160, 160);
+    border-radius: 0.5rem;
+}
