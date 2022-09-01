@@ -34,9 +34,8 @@ mark {
     background: none;
 }
 
-mark .green{
-    color:#2dbb41;
-}
+
+
 
 /* =================================================================
     background-color: #24252A;
@@ -334,15 +333,16 @@ h2 {
     font-family: Monaco;
     font-size: 0.75rem;
     color: #b0b2b6;
+    
 }
 
 .terminal {
-    width: 35rem;
-    height: 18rem;
-    background-color: #000000bb;
+    display: flex;
+    width: 75vh;
+    height: 35vh;
+    background-color: #0d0f17;
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 20px;
-
 }
 
 .terminal p * {
@@ -351,7 +351,9 @@ h2 {
     color: #b0b2b6;
     
 }
-.terminal::-webkit-scrollbar { 
+
+
+.terminal *::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
 
@@ -364,11 +366,22 @@ h2 {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #000000bb;
-    width: 35rem;
-    height: 1.5rem;
+    background-color: #0d0f17;
+    width: 75vh;
+    height: 3.5vh;
     border-radius: 0.5rem;
 }
+
+
+/* if the width > than the nav, hamburger doesnt show up due to scroll. */
+@media(max-width:768px) {
+    .term-top{
+        width: 45vh;
+        margin-right: 4vh;
+    }
+
+}
+
 
 .term-title p {
     margin-top: 5px;
@@ -431,15 +444,22 @@ h2 {
     margin-top: 0.5rem;
 }
 
+.terminal-line span{
+    color: white;
+}
+
+
 /* power line */
 .success {
-    color: #8dd39e;
+    color: #8dd39e !important;
 }
 
 .directory {
-    color: #75e1e7;
+    color: #75e1e7 !important;
     font-weight: 500;
 }
+
+
 
 .dummy-keyboard {
     opacity: 0;
@@ -466,4 +486,13 @@ h2 {
     50% {
         opacity: 0;
     }
+}
+
+
+.output{
+    color: white;
+}
+
+.output a{
+    color:#AFE1AF;
 }

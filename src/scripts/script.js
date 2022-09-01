@@ -70,10 +70,10 @@ document.getElementById("devices").innerHTML = deviceCheck();
 /////////////////////////////
 
 
-let userInput, terminalOutput;
+let userInput, terminalOutput, terminal;
 window.userInput = document.getElementById("userInput");
 terminalOutput = document.getElementById("terminalOutput");
-
+terminal = document.getElementById("terminal-line");
 
 // Running input commands
 const execute = function executeCommand(input) {
@@ -92,7 +92,8 @@ const execute = function executeCommand(input) {
     }
 
     terminalOutput.innerHTML += `<div class="terminal-line">${output}</div>`;
-    terminalOutput.scrollTop = terminalOutput.scrollheight;
+    terminal.scrollTop = terminal.scrollheight;
+    terminal.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
 };
 
 
@@ -108,6 +109,7 @@ const key = function keyEvent(e) {
         return;
     }
 
+    console.log(e.key);
     userInput.innerHTML = input + e.key;
 };
 
@@ -127,6 +129,11 @@ if (document.readyState !== "loading") {
     app();
 }
 
+
+// implement directory and other terminal functionality  support after
 const COMMANDS = {
-    help: `Supported commands: "<mark>about</mark>", "<mark>resume</mark>", "<mark>projects</mark>", "<mark>blog</mark>" "<mark class="green">clear</mark>".`,
+    help: `<u style="color: white;">Supported commands</u>: "about", "resume", projects", "blog", "clear".`,
+    about: 'Hi, I’m Evan Huang, a Daedalus Scholar at Hunter College, concentrating in computer science. I enjoy reading articles (especially TechCrunch), watching sitcoms, dramas, and anime, cooking, and bodybuilding. Regardless, please feel free to contact me about any inquiries regarding academics, internships, or CS-related opportunities.',
+    resume: `<a href ="info/Resume 8_29_22 (updated).pdf">Resume</a>`,
+    
 };
