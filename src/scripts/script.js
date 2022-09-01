@@ -61,3 +61,72 @@ function deviceCheck() {
 };
 
 document.getElementById("devices").innerHTML = deviceCheck();
+
+
+
+
+/////////////////////////////
+/* User input for terminal */
+/////////////////////////////
+
+
+let userInput, terminalOutput;
+window.userInput = document.getElementById("userInput");
+terminalOutput = document.getElementById("terminalOutput");
+
+
+// Running input commands
+const execute = function executeCommand(input) {
+    input = input.toLowerCase();
+    let output = `<div class="terminal-line"><span class="success">➜</span> <span class="directory">~</span> ${input}</div>`;
+
+    if (input.length === 0){
+        terminalOutput.innerHTML += `<div class="terminal-line"><span class="success">➜</span></div>`; 
+        return;
+    } 
+
+    if (!COMMANDS.hasOwnProperty(input)) {
+        output += `<div class="terminal-line">no such command: <span class="output">"${input}"</span></div>`;
+    } else {
+        output += `<div class="output"> ${COMMANDS[input]} </div>`;
+    }
+
+    terminalOutput.innerHTML += `<div class="terminal-line">${output}</div>`;
+    terminalOutput.scrollTop = terminalOutput.scrollheight;
+};
+
+
+
+// Entering and deleting inputs
+const key = function keyEvent(e) {
+    userInput = document.getElementById("userInput");
+    const input = window.userInput.innerHTML;
+
+    if (e.key === "Enter") {
+        execute(input);
+        userInput = document.getElementById("userInput").innerHTML = "";
+        return;
+    }
+
+    userInput.innerHTML = input + e.key;
+};
+
+const backspace = function backSpaceKeyEvent(e) {
+    if (e.keyCode !== 8 && e.keyCode !== 46) {
+        return;
+    }
+    userInput.innerHTML = userInput.innerHTML.slice(
+        0,
+        userInput.innerHTML.length - 1
+    );
+};
+
+document.addEventListener("keydown", backspace);
+document.addEventListener("keypress", key);
+if (document.readyState !== "loading") {
+    app();
+}
+
+const COMMANDS = {
+    help: `Supported commands: "<mark>about</mark>", "<mark>resume</mark>", "<mark>projects</mark>", "<mark>blog</mark>" "<mark class="green">clear</mark>".`,
+};

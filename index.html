@@ -47,24 +47,37 @@
 
     <section id="work">
         <h2>Progression</h2>
-
-        
         <!-- With inspiration from Twan Mulder-->
         <div class="apps">
-            <div class="terminal">
-                <div class="term_top">
-                    <div class = "ellipsis_menu">
-                        <span class="dot_circles" id = "close"></span>
-                        <span class="dot_circles" id = "min"></span>
-                        <span class="dot_circles" id = "max"></span>
+            <div class="terminal" id = "terminal">
+                <div class="term-top">
+                    <div class="ellipsis_menu">
+                        <span class="dot-circles" id="close"></span>
+                        <span class="dot-circles" id="min"></span>
+                        <span class="dot-circles" id="max"></span>
                     </div>
-                    <div class="term_title">
-                        <p id = "devices"></p>
+                    <div class="term-title">
+                        <p id="devices"></p>
                     </div>
-                    <div class = "placeholder"></div>
+                    <div class="placeholder"></div>
                 </div>
-                <div class="term_container">
-                    <p>Welcome to my interative terminal. Please type help for a list of supported commands.</p>
+
+                <!--Terminal Body-->
+                <div class="term-wrapper">
+                    <div class="term-container" id="terminalOutput">
+                        <div class="terminal-line">
+                            <p>Welcome to my interative terminal. Please type <mark class=hColor>help</mark> for a list of
+                                supported commands.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="terminal-line">
+                        <span class="success">➜</span>
+                        <span class="directory">~</span>
+                        <span class="user-input" id="userInput"></span>
+                        <input type="text" id="dummyKeyboard" class="dummy-keyboard" autocomplete="off" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,7 +90,8 @@
     <script>
         var typing_effect = new Typed(".type-effect", {
             strings: [
-                "Eat clen. Tren hard. Test your limits. Dbolish your goals. GHet huge, Anavar give up :)"],
+                "Eat clen. Tren hard. Test your limits. Dbolish your goals. GHet huge, Anavar give up :)"
+            ],
             typeSpeed: 75,
             backSpeed: 150,
             loop: false

@@ -2,10 +2,10 @@
 @font-face {
     font-family: pixel;
     src: url(/src/fonts/VT323/VT323-Regular.ttf);
-    
+
 }
 
-@font-face{
+@font-face {
     font-family: Monaco;
     font-display: swap;
     src: url(/src/fonts/Monaco.ttf);
@@ -21,12 +21,21 @@
     font-size: 1.25rem;
     color: white;
     overflow-x: hidden;
+    
 }
 
 li,
 a {
     list-style: none;
     text-decoration: none;
+}
+
+mark {
+    background: none;
+}
+
+mark .green{
+    color:#2dbb41;
 }
 
 /* =================================================================
@@ -295,11 +304,11 @@ h1 {
 
 
 /* ==============================
-    Work  Section
+    Progression  Section
   ============================== */
 
 
-#work{
+#work {
     background-color: #3B3945;
 }
 
@@ -307,50 +316,73 @@ h1 {
 h2 {
     margin-top: 5rem;
     text-align: center;
-    color:#E1C16E;
+    color: #E1C16E;
     font-size: 7vh;
 }
 
 
-.apps{
+.apps {
     display: flex;
     justify-content: space-evenly;
-    flex-flow: row wrap; 
+    flex-flow: row wrap;
     height: 920px;
     background-color: #3B3945;
     margin-top: 5rem;
 }
 
-
-.terminal{
-    width: 35rem;
-    height: 18rem;
-    background-color:#000000bb;
-    border-radius: 0.5rem;
-    box-shadow: rgba(0,0,0,0.8) 0 0 15px;
-    font-family: Monaco;
-}
-
-
-.term_top{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 0.5rem;
-    justify-content: space-between;
-}
-
-.term_title p{
-    margin-top: 5px;
-    margin-right: 55px;
+.terminal *{
     font-family: Monaco;
     font-size: 0.75rem;
     color: #b0b2b6;
 }
 
+.terminal {
+    width: 35rem;
+    height: 18rem;
+    background-color: #000000bb;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 20px;
+
+}
+
+.terminal p * {
+    font-family: Monaco;
+    font-size: 0.75rem;
+    color: #b0b2b6;
+    
+}
+.terminal::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+
+
+/* Terminal Header */
+.term-top {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #000000bb;
+    width: 35rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.term-title p {
+    margin-top: 5px;
+    margin-right: 55px;
+    font-family: Monaco;
+    font-size: 0.75rem;
+    color: #b0b2b6;
+    top: 0;
+}
+
 
 /* Mimicking terminal open, minimize, close. */
-.dot_circles {
+.dot-circles {
+    margin-top: 0.4rem;
     height: 0.65rem;
     width: 0.65rem;
     background-color: rgb(0, 0, 0);
@@ -358,31 +390,80 @@ h2 {
     display: inline-block;
 }
 
-#close{
+#close {
     margin-left: 0.75rem;
     background-color: #f96256;
     border: 1px solid #f65549;
 }
 
-#min{
+#min {
     background-color: #ffb524;
     border: 1px solid #ffb524;
 }
 
-#max{
+#max {
     background-color: #33c948;
     border: 1px solid #2dbb41;
     margin-right: 0;
 }
 
-/*  Terminal Container */
-.term_container{
-    margin: 1rem;
-    
+#close:hover, #min:hover, #max:hover {
+    background-color: black;
+    border: black;
+    transition: all 0.3s ease-in-out 0s;
+
 }
 
-.term_container p{
-    font-family: Monaco;
-    font-size: 0.75rem;
-    color: #b0b2b6;
+
+/*  Terminal Container */
+
+.term-wrapper{
+    margin: 1.5rem 1rem 1rem;
+}
+
+.term-container mark {
+    color: white;
+}
+
+
+/* terminal inputs  */
+.terminal-line{
+    margin-top: 0.5rem;
+}
+
+/* power line */
+.success {
+    color: #8dd39e;
+}
+
+.directory {
+    color: #75e1e7;
+    font-weight: 500;
+}
+
+.dummy-keyboard {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.user-input {
+    position: relative;
+}
+
+.user-input::after {
+    display: block;
+    content: "";
+    width: 10px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    right: -10px;
+    animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
