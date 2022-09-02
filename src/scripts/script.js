@@ -140,7 +140,7 @@ if (document.readyState !== "loading") {
 const COMMANDS = {
     ls: `about&emsp; resume&emsp; projects&emsp; blog&emsp; clear`,
     about: 'Hi, I’m Evan Huang, a Daedalus Scholar at Hunter College, concentrating in computer science. I enjoy reading articles (especially TechCrunch), watching sitcoms, dramas, and anime, cooking, and bodybuilding. Regardless, please feel free to contact me about any inquiries regarding academics, internships, or CS-related opportunities.',
-    resume: `<a href ="info/Resume 9_1_22.pdf">Resume</a>`,
+    resume: `<a href ="info/Resume 9_1_22.pdf" target="_blank">Resume</a>`,
     clear: clearTerminal(),
     
 };

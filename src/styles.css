@@ -65,12 +65,18 @@ mark {
 }
 
 .name {
-    font-size: 1.6rem;
-    padding: 1rem;
+    margin-top: -1rem;
+    font-size: 1.5rem;
+    padding: 1rem 1rem 1rem 1rem;
     margin-right: auto;
     color: #ffffff;
     background-color: #04AA6D;
     border-bottom-right-radius: 1.75rem;
+}
+
+.name p{
+    font-size: 1rem;
+    margin-bottom: -1rem;
 }
 
 .nav-links li {
@@ -320,7 +326,6 @@ h1 {
     font-family: Monaco;
     font-size: 0.75rem;
     color: #b0b2b6;
-
 }
 
 .terminal {
@@ -334,11 +339,12 @@ h1 {
 
 .terminal p * {
     font-family: Monaco;
-    font-size: 0.rem;
     color: #b0b2b6;
 }
 
-
+.terminal::-webkit-scrollbar {
+    display: none;
+}
 
 
 /* Terminal Header */
@@ -367,9 +373,9 @@ h1 {
 
 .term-title p {
     margin-top: 5px;
-    margin-right: 55px;
+    margin-right: 45px;
     font-family: Monaco;
-    font-size: 0.8rem;
+    font-size: calc(1.58vh - 1px);
     color: #b0b2b6;
     top: 0;
 }
@@ -504,7 +510,8 @@ footer
 
 .logos ul li {
     display: inline-block;
-    
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 
