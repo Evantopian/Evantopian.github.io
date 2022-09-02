@@ -21,7 +21,7 @@
     font-size: 1.25rem;
     color: white;
     overflow-x: hidden;
-    
+
 }
 
 li,
@@ -255,16 +255,23 @@ mark {
     Home Section
   ============================== */
 
+#home {
+    background-color: #0d0f17;
+}
 
 .home-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-image: url(imgs/home_page_bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100%;
+    align-items: center;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 
 }
 
@@ -275,87 +282,62 @@ mark {
     width: 100%;
     bottom: 0;
     left: 0;
-    background: linear-gradient(transparent 0%, #3B3945 100%);
+    background: linear-gradient(transparent 0%, #0d0f17 100%);
 }
 
 h1 {
-    text-align: center;
+    margin-top: 1.5rem;
     color: #E1C16E;
     text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
-    font-size: 12vh;
+    font-size: calc(25vh - 100px);
     width: 100%;
     z-index: 1;
+    text-align: center;
+    padding: 2px;
+
 }
 
 
 .about-me {
-    margin-top: -2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: row
+    text-align: center;
 }
 
 .about-me p {
-    text-align: center;
-    font-size: 1.25rem;
+    font-size: calc(5vh - 50px);
+    word-wrap: break-word;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding: 5px;
 }
 
 
 /* ==============================
-    Progression  Section
+    terminal  
   ============================== */
 
-
-#work {
-    background-color: #3B3945;
-}
-
-
-h2 {
-    margin-top: 5rem;
-    text-align: center;
-    color: #E1C16E;
-    font-size: 7vh;
-}
-
-
-.apps {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-    height: 920px;
-    background-color: #3B3945;
-    margin-top: 5rem;
-}
-
-.terminal *{
+.terminal * {
     font-family: Monaco;
     font-size: 0.75rem;
     color: #b0b2b6;
-    
+
 }
 
 .terminal {
-    display: flex;
-    width: 75vh;
-    height: 35vh;
+    width: calc(85vh - 200px);
+    height: calc(35vh - 50px);
     background-color: #0d0f17;
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 20px;
+    margin-top: -5rem;
 }
 
 .terminal p * {
     font-family: Monaco;
-    font-size: 0.75rem;
+    font-size: 0.rem;
     color: #b0b2b6;
-    
 }
 
-
-.terminal *::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
 
 
 
@@ -367,19 +349,19 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     background-color: #0d0f17;
-    width: 75vh;
+    width: calc(80vh - 200px);
     height: 3.5vh;
     border-radius: 0.5rem;
 }
 
-
-/* if the width > than the nav, hamburger doesnt show up due to scroll. */
-@media(max-width:768px) {
-    .term-top{
-        width: 45vh;
-        margin-right: 4vh;
+@media(max-width: 768px) {
+    .term-top {
+        width: calc(80vh - 350px);
     }
 
+    .terminal {
+        width: calc(85vh - 360px);
+    }
 }
 
 
@@ -387,7 +369,7 @@ h2 {
     margin-top: 5px;
     margin-right: 55px;
     font-family: Monaco;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #b0b2b6;
     top: 0;
 }
@@ -420,7 +402,9 @@ h2 {
     margin-right: 0;
 }
 
-#close:hover, #min:hover, #max:hover {
+#close:hover,
+#min:hover,
+#max:hover {
     background-color: black;
     border: black;
     transition: all 0.3s ease-in-out 0s;
@@ -430,7 +414,7 @@ h2 {
 
 /*  Terminal Container */
 
-.term-wrapper{
+.term-wrapper {
     margin: 1.5rem 1rem 1rem;
 }
 
@@ -440,11 +424,11 @@ h2 {
 
 
 /* terminal inputs  */
-.terminal-line{
+.terminal-line {
     margin-top: 0.5rem;
 }
 
-.terminal-line span{
+.terminal-line span {
     color: white;
 }
 
@@ -489,10 +473,51 @@ h2 {
 }
 
 
-.output{
+.output {
     color: white;
 }
 
-.output a{
-    color:#AFE1AF;
+.output a {
+    color: #AFE1AF;
+}
+
+/*
+footer
+*/
+
+#footer {
+    width: 100%;
+    height: 115px;
+    background-color: #0d0f17;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logos {
+    margin-top: 1.5rem;
+}
+
+.logos ul li {
+    display: inline-block;
+    
+}
+
+
+
+.logos i:hover {
+    color: #AFE1AF;
+    box-shadow: 0 0 0 3px #cde1f8;
+    transition: all 500ms ease;
+}
+
+
+.cc {
+    font-family: Monaco;
+    font-size: 0.75rem;
+    padding: 5px
 }

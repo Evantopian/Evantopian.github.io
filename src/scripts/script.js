@@ -82,6 +82,7 @@ const execute = function executeCommand(input) {
 
     if (input.length === 0){
         terminalOutput.innerHTML += `<div class="terminal-line"><span class="success">➜</span></div>`; 
+        terminal.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
         return;
     } 
 
@@ -97,19 +98,24 @@ const execute = function executeCommand(input) {
 };
 
 
-
-// Entering and deleting inputs
+let arrKeyCnt = 0;
+// key inputs
 const key = function keyEvent(e) {
     userInput = document.getElementById("userInput");
     const input = window.userInput.innerHTML;
 
+    // Add more key events later
+
     if (e.key === "Enter") {
         execute(input);
         userInput = document.getElementById("userInput").innerHTML = "";
+        if (input != '') cmdHistory.push(input);
+        console.log(cmdHistory);
         return;
     }
 
-    console.log(e.key);
+
+
     userInput.innerHTML = input + e.key;
 };
 
@@ -132,8 +138,20 @@ if (document.readyState !== "loading") {
 
 // implement directory and other terminal functionality  support after
 const COMMANDS = {
-    help: `<u style="color: white;">Supported commands</u>: "about", "resume", projects", "blog", "clear".`,
+    ls: `about&emsp; resume&emsp; projects&emsp; blog&emsp; clear`,
     about: 'Hi, I’m Evan Huang, a Daedalus Scholar at Hunter College, concentrating in computer science. I enjoy reading articles (especially TechCrunch), watching sitcoms, dramas, and anime, cooking, and bodybuilding. Regardless, please feel free to contact me about any inquiries regarding academics, internships, or CS-related opportunities.',
     resume: `<a href ="info/Resume 9_1_22.pdf">Resume</a>`,
+    clear: clearTerminal(),
     
 };
+
+
+const cmdHistory = [];
+
+function clearTerminal(){
+    const height = document.getElementById('terminal').offsetHeight;
+    let lines = height/10;
+    let s = ' ';
+    for (let i = 0; i < lines; i++) s+='<br>';
+    return s;
+}

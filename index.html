@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -19,7 +21,7 @@
             <a class="name" href="#home">Archive 22</a>
             <img class="run-gif" src="src/imgs/running_boy.gif">
             <ul class="nav-links">
-                <li class="nav-items"><a href="#work" ::before>Blog</a></li>
+                <li class="nav-items"><a href="#footer">Blog</a></li>
                 <li class="nav-items"><a href="#">Projects</a></li>
                 <li class="nav-items"><a href="https://github.com/ThisGuyEvan" target="_blank">Github</a></li>
             </ul>
@@ -40,16 +42,10 @@
                 <h1>Evan Huang</h1>
                 <br>
                 <p><span class="type-effect"></span></p>
-
-
             </div>
-    </section>
 
-    <section id="work">
-        <h2>Progression</h2>
-        <!-- With inspiration from Twan Mulder-->
-        <div class="apps">
-            <div class="terminal" id = "terminal">
+
+            <div class="terminal" id="terminal">
                 <div class="term-top">
                     <div class="ellipsis_menu">
                         <span class="dot-circles" id="close"></span>
@@ -66,7 +62,8 @@
                 <div class="term-wrapper">
                     <div class="term-container" id="terminalOutput">
                         <div class="terminal-line">
-                            <p>Welcome to my interative terminal. Please type <mark class=mark-green>help</mark> for a list of
+                            <p>Welcome to my interative terminal. Please type <mark class=mark-green>ls</mark> for a
+                                list of
                                 supported commands.</p>
                         </div>
                     </div>
@@ -81,6 +78,32 @@
                 </div>
             </div>
         </div>
+
+    </section>
+
+    <section id="footer">
+        <div class="footer">
+            <div class="logos">
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/evan-huang-5b98271a3/" target="_blank">
+                            <span class="icon-circle"><i class="fa fa-linkedin-square"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Evan.pro.league.player" target="_blank">
+                            <span class="icon-circle"><i class="fa fa-facebook"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ThisGuyEvan" target="_blank">
+                            <span class="icon-circle"><i class="fa fa-github"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cc">© Evan Huang</div>
+        </div>
     </section>
 
 
@@ -90,7 +113,7 @@
     <script>
         var typing_effect = new Typed(".type-effect", {
             strings: [
-                "Eat clen. Tren hard. Test your limits. Dbolish your goals. GHet huge, Anavar give up :)"
+                "Dumplings are a superior type of food :)"
             ],
             typeSpeed: 75,
             backSpeed: 150,
