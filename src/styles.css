@@ -96,6 +96,7 @@ mark {
 
 .nav-links li a:hover {
     color: #AFE1AF;
+    box-shadow: 0 3px 0 0 #cde1f8;
 }
 
 .run-gif {
@@ -333,7 +334,7 @@ h1 {
     height: calc(35vh - 50px);
     background-color: #0d0f17;
     border-radius: 0.5rem;
-    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 20px;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 8px 8px;
     margin-top: -5rem;
 }
 
