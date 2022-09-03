@@ -480,11 +480,11 @@ h1 {
 }
 
 
-.output {
-    color: white;
+.output p{
+    color: rgb(102, 215, 230);
 }
 
-.output a {
+.output a{
     color: #AFE1AF;
 }
 
@@ -528,4 +528,9 @@ footer
     font-family: Monaco;
     font-size: 0.75rem;
     padding: 5px
+}
+
+.projects{
+    color:#75e1e7;
+    margin-top: 0.5rem;
 }

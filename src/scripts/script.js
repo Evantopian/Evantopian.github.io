@@ -113,6 +113,7 @@ const key = function keyEvent(e) {
     const input = window.userInput.innerHTML;
 
     // Add more key events later
+    if (input.substr(0,2) === "cd ") console.log("works");
 
     if (e.key === "Enter") {
         execute(input);
@@ -146,11 +147,12 @@ if (document.readyState !== "loading") {
 
 // implement directory and other terminal functionality  support after
 const COMMANDS = {
-    ls: `about&emsp; resume&emsp; projects&emsp; blog&emsp; clear`,
+    ls: `<p>about&emsp; resume&emsp; projects&emsp; blog&emsp; updates&emsp; clear</p>`,
     about: 'Hi, I’m Evan Huang, a Daedalus Scholar at Hunter College, concentrating in computer science. I enjoy reading articles (especially TechCrunch), watching sitcoms, dramas, and anime, cooking, and bodybuilding. Regardless, please feel free to contact me about any inquiries regarding academics, internships, or CS-related opportunities.',
     resume: `<a href ="info/Resume 9_1_22.pdf" target="_blank">Resume</a>`,
     clear: clearTerminal(),
-    projects: 'Will be avaialbe to see soon...migrating old website data to new portfolio'
+    projects: '<ul><li class="projects"><a href="">- PuzzleMe!</a></li><li class="projects"><a href="">- Port2020</a></li><li class="projects"><a href="">- TBA</a></li></ul>',
+    updates: '<p>test</p>'
 
 };
 
