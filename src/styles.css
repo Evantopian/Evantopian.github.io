@@ -412,7 +412,7 @@ h1 {
 #close:hover,
 #min:hover,
 #max:hover {
-    background-color: black;
+    background-color: #0d0f17;
     border: black;
     transition: all 0.3s ease-in-out 0s;
 
