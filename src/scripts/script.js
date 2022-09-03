@@ -152,7 +152,8 @@ const COMMANDS = {
     resume: `<a href ="info/Resume 9_1_22.pdf" target="_blank">Resume</a>`,
     clear: clearTerminal(),
     projects: '<ul><li class="projects"><a href="">- PuzzleMe!</a></li><li class="projects"><a href="">- Port2020</a></li><li class="projects"><a href="">- TBA</a></li></ul>',
-    updates: '<p>test</p>'
+    updates: '<p>test</p>',
+    blog: 'Currently working on a blog with heatmap calender implementations.'
 
 };
 
