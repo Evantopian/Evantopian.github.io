@@ -1,4 +1,3 @@
-
 // hamburger 
 const menu = document.querySelector(".menu");
 const navLinks = document.querySelector(".nav-links");
@@ -113,7 +112,7 @@ const key = function keyEvent(e) {
     const input = window.userInput.innerHTML;
 
     // Add more key events later
-    if (input.substr(0,2) === "cd ") console.log("works");
+    if (input.substr(0, 2) === "cd ") console.log("works");
 
     if (e.key === "Enter") {
         execute(input);
@@ -152,7 +151,7 @@ const COMMANDS = {
     resume: `<a href ="info/Resume 9_1_22.pdf" target="_blank">Resume</a>`,
     clear: clearTerminal(),
     projects: '<ul><li class="projects"><a href="">- PuzzleMe!</a></li><li class="projects"><a href="">- Port2020</a></li><li class="projects"><a href="">- TBA</a></li></ul>',
-    updates: '<p>test</p>',
+    updates: ' <ul><li class = "updates">v0.1: Terminal Release--basic commands. (9/2/22)</li> <li class = "updates">v0.2: Deep directory support. (WPI)</li> <li class = "updates">v0.3: Pop-Up windows from terminal. (WPI)</li> <li class = "updates">v0.4: Adding Blog. (Future).</li></ul> ',
     blog: 'Currently working on a blog with heatmap calender implementations.'
 
 };
@@ -167,7 +166,3 @@ function clearTerminal() {
     for (let i = 0; i < lines; i++) s += '<br>';
     return s;
 }
-
-
-
-
