@@ -296,7 +296,7 @@ h1 {
     margin-top: 1.5rem;
     color: #E1C16E;
     text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
-    font-size: calc(9vw - 1vw);
+    font-size: calc(8.5vw - 1vw);
     width: 100%;
     z-index: 1;
     text-align: center;
@@ -310,7 +310,6 @@ h1 {
 }
 
 .about-me p {
-    font-size: calc(5vh - 50px);
     word-wrap: break-word;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     padding: 5px;
@@ -318,7 +317,7 @@ h1 {
 
 
 .type-effect {
-    font-size: calc(3.2vh - 5px);
+    font-size: calc(3vh - 5px);
 }
 
 /* ==============================
@@ -336,7 +335,7 @@ h1 {
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
     margin-top: -6rem;
-    height: 35vh;
+    height: 32vh;
 }
 
 .terminal p * {
@@ -379,8 +378,9 @@ h1 {
 }
 
 @media screen and (max-width: 1020px) {
-    .terminal{
+    .terminal {
         height: 28vh;
+        font-size: 0.75vw;
     }
     .term-top, .terminal{
         width: calc(70vw - 1vw);
@@ -391,19 +391,19 @@ h1 {
 }
 
 @media screen and (max-width:430px) {
-    .term-top, .terminal{
+    .term-top, .terminal, .terminal-line *{
+        font-size: 3vw;
         width: calc(95vw - 0.5vw);
     }
     h1{
         font-size: calc(20vw - 1vw);
     }
-
 }
 
 
 .term-title p {
     margin-top: 5px;
-    margin-right: 45px;
+    margin-right: 3rem;
     font-family: Monaco;
     font-size: 0.7rem;
     color: #b0b2b6;
@@ -469,9 +469,6 @@ h1 {
     color: white;
 }
 
-.terminal-line *{
-    font-size: 0.7rem;
-}
 
 
 /* power line */
