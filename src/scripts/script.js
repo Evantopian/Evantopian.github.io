@@ -121,7 +121,13 @@ const key = function keyEvent(e) {
     let input = window.userInput.innerHTML;
     let original = input;
     // Add more key events later
-    
+
+    if (userInput != null){
+        if (e.key == "Backspace" || e.key == "Delete"){
+            userInput.innerHTML = userInput.innerHTML.slice(0,userInput.innerHTML.length - 1);
+            return;
+        }
+    }
 
 
     if (e.key === "Enter" || e.key === "return") {
@@ -142,28 +148,10 @@ const key = function keyEvent(e) {
     userInput.innerHTML = input + e.key;
 };
 
-const keyType = function keyTypeEvent(e) {
-    if (cmdHistory.length > 0) {
-        if (e.keyType =="ArrowUp"){
-            //.alert(cmdHistory.at(cmdHistory.length-1));
-            console.log(cmdHistory);
-            userInput.innerHTML += cmdHistory.at(cmdHistory.length-1);
-        }
-    }
-    if (userInput != null){
-        if (e.key == "Backspace" || e.key == "Delete"){
-            userInput.innerHTML = userInput.innerHTML.slice(0,userInput.innerHTML.length - 1);
-        }
-    }
-        
-    return;
-};
 
 
+document.addEventListener("keydown", key);
 
-
-document.addEventListener("keydown", keyType);
-document.addEventListener("keypress", key);
 if (document.readyState !== "loading") {
     app();
 }
