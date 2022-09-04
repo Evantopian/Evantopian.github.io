@@ -1,6 +1,8 @@
 # port22
 Desktop, mobile, tablet, etc. 
 
+Simple configuration: purely html, css, javascript.
+
 <img src ="/src/imgs/V0_1_UI_Design/unknown.png" width="80%" alt="Desktop" /></img>
 <img src ="/src/imgs/V0_1_UI_Design/1450147.png" width="80%" alt="Desktop" /></img>
 <p>

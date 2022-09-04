@@ -67,7 +67,16 @@ document.getElementById("devices").innerHTML = deviceCheck();
 /////////////////////////////
 /* User input for terminal */
 /////////////////////////////
-
+const COMMANDS = {
+    ls: `<p>about&emsp; resume&emsp; projects&emsp; blog&emsp; updates&emsp; clear</p>`,
+    about: '<mark class="default-white">Hi, I’m Evan Huang, a Daedalus Scholar at Hunter College, concentrating in computer science. I enjoy reading articles (especially TechCrunch), watching sitcoms, dramas, and anime, cooking, and bodybuilding. Regardless, please feel free to contact me about any inquiries regarding academics, internships, or CS-related opportunities.</mark><mark class="cactus"><br><br>Personal</p>',
+    resume: `<a href ="info/Resume 9_1_22.pdf" target="_blank">Resume</a>`,
+    clear: clearTerminal(),
+    projects: '<ul><li class="projects"><a href="">- PuzzleMe!</a></li><li class="projects"><a href="">- Port2020</a></li><li class="projects"><a href="">- TBA</a></li></ul>',
+    updates: ' <ul><li class = "updates">v0.1: Terminal Release--basic commands. (9/2/22)</li> <li class = "updates">v0.2: Deep directory support. (WPI)</li> <li class = "updates">v0.3: Pop-Up windows from terminal. (WPI)</li> <li class = "updates">v0.4: Adding Blog. (Future).</li></ul> ',
+    blog: 'Currently working on a blog with heatmap calender implementations.',
+    cdpersonal: 'personal: tba',
+};
 
 let userInput, terminalOutput, terminal;
 window.userInput = document.getElementById("userInput");
@@ -115,16 +124,17 @@ const key = function keyEvent(e) {
     
 
 
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || e.key === "return") {
         console.log(input.substr(0, 3) + (input.substr(3, input.length)));
 
         if (input.substr(0, 3) == "cd " && (input.substr(3, input.length+1)).indexOf(' ') == -1){
             input = input.substr(0,2)+input.substr(3, input.length);
         }
-        
+        // implement directory and other terminal functionality  support after
+
         if (input != '' || input != "") cmdHistory.push(input);
 
-        execute(cmdHistory.length != 0  ? cmdHistory.at(-1) : '', original);
+        execute(input, original);
         userInput = document.getElementById("userInput").innerHTML = "";
         
         console.log(cmdHistory);
@@ -134,19 +144,16 @@ const key = function keyEvent(e) {
 
 const keyType = function keyTypeEvent(e) {
     if (cmdHistory.length > 0) {
-        if (e.key =="ArrowUp"){
+        if (e.keyType =="ArrowUp"){
             //.alert(cmdHistory.at(cmdHistory.length-1));
             console.log(cmdHistory);
             userInput.innerHTML += cmdHistory.at(cmdHistory.length-1);
-            console.log(userInput.innerHTML);
         }
     }
-
-    if (e.key =="Backspace"){
-        userInput.innerHTML = userInput.innerHTML.slice(
-            0,
-            userInput.innerHTML.length - 1
-        );
+    if (userInput != null){
+        if (e.key == "Backspace" || e.key == "Delete"){
+            userInput.innerHTML = userInput.innerHTML.slice(0,userInput.innerHTML.length - 1);
+        }
     }
         
     return;
@@ -162,19 +169,6 @@ if (document.readyState !== "loading") {
 }
 
 
-// implement directory and other terminal functionality  support after
-const COMMANDS = {
-    ls: `<p>about&emsp; resume&emsp; projects&emsp; blog&emsp; updates&emsp; clear</p>`,
-    about: '<mark class="default-white">Hi, I’m Evan Huang, a Daedalus Scholar at Hunter College, concentrating in computer science. I enjoy reading articles (especially TechCrunch), watching sitcoms, dramas, and anime, cooking, and bodybuilding. Regardless, please feel free to contact me about any inquiries regarding academics, internships, or CS-related opportunities.</mark><mark class="cactus"><br><br>Personal</p>',
-    resume: `<a href ="info/Resume 9_1_22.pdf" target="_blank">Resume</a>`,
-    clear: clearTerminal(),
-    projects: '<ul><li class="projects"><a href="">- PuzzleMe!</a></li><li class="projects"><a href="">- Port2020</a></li><li class="projects"><a href="">- TBA</a></li></ul>',
-    updates: ' <ul><li class = "updates">v0.1: Terminal Release--basic commands. (9/2/22)</li> <li class = "updates">v0.2: Deep directory support. (WPI)</li> <li class = "updates">v0.3: Pop-Up windows from terminal. (WPI)</li> <li class = "updates">v0.4: Adding Blog. (Future).</li></ul> ',
-    blog: 'Currently working on a blog with heatmap calender implementations.',
-    cdpersonal: 'personal: tba',
-};
-
-
 const cmdHistory = [];
 
 function clearTerminal() {
@@ -182,5 +176,6 @@ function clearTerminal() {
     let lines = height / 10;
     let s = ' ';
     for (let i = 0; i < lines; i++) s += '<br>';
+
     return s;
 }
