@@ -1,3 +1,6 @@
+// general scripts for ui.
+
+
 // hamburger 
 const menu = document.querySelector(".menu");
 const navLinks = document.querySelector(".nav-links");
@@ -167,3 +170,6 @@ function clearTerminal() {
 
     return s;
 }
+
+
+// add echo
