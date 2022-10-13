@@ -73,7 +73,7 @@ document.getElementById("devices").innerHTML = deviceCheck();
 const COMMANDS = {
     ls: `<p>about&emsp; resume&emsp; projects&emsp; blog&emsp; updates&emsp; clear</p>`,
     about: '<mark class="default-white">Hi, I’m Evan Huang, a Daedalus Scholar at Hunter College, concentrating in computer science. I enjoy reading articles (especially TechCrunch), watching sitcoms, dramas, and anime, cooking, and bodybuilding. Regardless, please feel free to contact me about any inquiries regarding academics, internships, or CS-related opportunities.</mark><mark class="cactus"><br><br>Personal</p>',
-    resume: `<a href ="info/Resume 9_1_22.pdf" target="_blank">Resume</a>`,
+    resume: `<a href ="info/Resume 10_13.pdf" target="_blank">Resume</a>`,
     clear: clearTerminal(),
     projects: '<ul><li class="projects"><a href="">- PuzzleMe!</a></li><li class="projects"><a href="">- Port2020</a></li><li class="projects"><a href="">- TBA</a></li></ul>',
     updates: ' <ul><li class = "updates">v0.1: Terminal Release--basic commands. (9/2/22)</li> <li class = "updates">v0.2: Deep directory support. (WPI)</li> <li class = "updates">v0.3: Pop-Up windows from terminal. (WPI)</li> <li class = "updates">v0.4: Adding Blog. (Future).</li></ul> ',
