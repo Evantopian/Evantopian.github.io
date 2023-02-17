@@ -3,18 +3,65 @@
     text-align: center;
 }
 
+ul{
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+p {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
 .home {
-    background-color: lightpink;
+    background-color: rgb(240, 189, 79);
 }
 
 .penguin {
     background-color: aquamarine;
 }
 
-ul {
-    list-style: none;
-  }
+/* Intentionally left white (Nothing)*/
+.snowlep{
+}
 
-.hidden {
-    display: none;
+.panda {
+    background-color: rgb(107, 187, 107);
+}
+
+.bluedragon {
+    background-color: rgb(135, 135, 206);
+}
+
+.fox{
+    background-color: orange;
+}
+
+.animals-img{
+    width: 700px;
+    height: 500px;
+}
+
+
+.button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3e8e41;
 }
