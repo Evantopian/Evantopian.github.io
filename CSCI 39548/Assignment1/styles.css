@@ -35,8 +35,15 @@ p {
     background-color: rgb(107, 187, 107);
 }
 
+.bluedragon {
+    background-color: rgb(113, 113, 172);
+}
+
+.fox{
+    background-color: orange;
+}
+
 .animals-img{
     width: 700px;
     height: 500px;
 }
-
