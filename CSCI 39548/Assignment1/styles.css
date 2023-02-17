@@ -3,6 +3,22 @@
     text-align: center;
 }
 
+ul{
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+}
+
+p {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
 .home {
     background-color: lightpink;
 }
@@ -11,10 +27,16 @@
     background-color: aquamarine;
 }
 
-ul {
-    list-style: none;
-  }
-
-.hidden {
-    display: none;
+/* Intentionally left white (Nothing)*/
+.snowlep{
 }
+
+.panda {
+    background-color: rgb(107, 187, 107);
+}
+
+.animals-img{
+    width: 700px;
+    height: 500px;
+}
+
