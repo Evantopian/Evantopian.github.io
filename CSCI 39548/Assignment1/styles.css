@@ -1,0 +1,23 @@
+body {
+    font-family: Courier New;
+    background-color: lightpink;
+    text-align: center;
+}
+
+.polar-bear {
+    background-color: white;
+    color: black;
+    font-size: 24px;
+}
+
+.elephant {
+    background-color: gray;
+    color: white;
+    font-size: 18px;
+}
+
+.giraffe {
+    background-color: yellow;
+    color: brown;
+    font-size: 20px;
+}
