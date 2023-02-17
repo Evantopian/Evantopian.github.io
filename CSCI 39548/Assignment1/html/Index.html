@@ -4,71 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evan's Zoo</title>
     <link rel="stylesheet" type="text/css" href="../styles.css">
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+
+    <title>Evan's Zoo</title>
 </head>
-<body>
-    <!-- zoo -->
+<body class="home">    <!-- zoo -->
     <h1>Welcome to Evan's Zoo</h1>
     <h2>See the animals at the zoo:</h2>
-    <img src="../images/Home_Zoo.png"></img>
-    <div class="zoo animal-container">
-        <a href="#" class="animal-link" data-animal="Polar Bear">Polar Bear</a>
-    </div>
-    <div class="zoo animal-container">
-        <a href="#" class="animal-link" data-animal="Elephant">Elephant</a>
-    </div>
-    <div class="zoo animal-container">
-        <a href="#" class="animal-link" data-animal="Giraffe">Giraffe</a>
-    </div>
-
-    <!-- Js for the animals -->
-    <script>
-        function changeStyle(animalName) {
-            const body = document.querySelector('body');
-            const animalClass = animalName.toLowerCase().replace(' ', '-');
-            const animalClasses = ['polar-bear', 'elephant', 'giraffe'];
-            animalClasses.forEach(function(cls) {
-                body.classList.remove(cls);
-            });
-            body.classList.add(animalClass);
-        }
-
-        function toggleAnimalContainers(animalName) {
-            const animalContainers = document.querySelectorAll('.animal-container');
-            animalContainers.forEach(function(container) {
-                if (container.dataset.animal === animalName) {
-                    container.classList.remove('hidden');
-                } else {
-                    container.classList.add('hidden');
-                }
-            });
-        }
-
-        const animalLinks = document.querySelectorAll('.animal-link');
-        const header1 = document.querySelector('h1');
-        const header2 = document.querySelector('h2');
-
-        animalLinks.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const animalName = this.dataset.animal;
-                changeStyle(animalName);
-                header1.textContent = `Welcome to the ${animalName} exhibit`;
-                header2.textContent = 'Clicked';
-                // Set localStorage item with animal name
-                localStorage.setItem('lastClickedAnimal', animalName);
-                // Hide other animal containers
-                toggleAnimalContainers(animalName);
-            });
-        });
-
-
-    </script>
+    <ul>
+        <li><a href="penguin.html" >Polar Bear</a></li>
+        <li><a href="snowleopard.html">Elephant</a></li>
+        <li><a href="#">Giraffe</a></li>
+    </ul>
 </body>
 </html>

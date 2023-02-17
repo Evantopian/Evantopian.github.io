@@ -1,26 +1,19 @@
-body {
+* {
     font-family: Courier New;
-    background-color: lightpink;
     text-align: center;
 }
 
-.polar-bear {
-    background-color: white;
-    color: black;
-    font-size: 24px;
+.home {
+    background-color: lightpink;
 }
 
-.elephant {
-    background-color: gray;
-    color: white;
-    font-size: 18px;
+.penguin {
+    background-color: aquamarine;
 }
 
-.giraffe {
-    background-color: yellow;
-    color: brown;
-    font-size: 20px;
-}
+ul {
+    list-style: none;
+  }
 
 .hidden {
     display: none;
