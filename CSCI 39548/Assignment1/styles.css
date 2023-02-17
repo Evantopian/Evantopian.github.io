@@ -9,6 +9,7 @@ ul{
 
 li a{
     text-decoration: none;
+    font-size: 20px;
 }
 
 p {
@@ -20,7 +21,7 @@ p {
 }
 
 .home {
-    background-color: lightpink;
+    background-color: rgb(240, 189, 79);
 }
 
 .penguin {
@@ -36,7 +37,7 @@ p {
 }
 
 .bluedragon {
-    background-color: rgb(113, 113, 172);
+    background-color: rgb(135, 135, 206);
 }
 
 .fox{
@@ -46,4 +47,21 @@ p {
 .animals-img{
     width: 700px;
     height: 500px;
+}
+
+
+.button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3e8e41;
 }
